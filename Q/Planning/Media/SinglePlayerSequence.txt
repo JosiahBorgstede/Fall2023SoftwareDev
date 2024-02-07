@@ -1,0 +1,12 @@
+title Single Players
+ 
+participant Player
+participant Referee
+
+Player->Referee: Register
+Player<--Referee: Acknowledgement & Starting Tiles
+
+Player<-Referee : Prompt for turn (Give them their public game state)
+Player-->Referee : Action
+box over Referee : Update game state
+Player<-Referee : Acknoledgement of legal turn, or kick from game

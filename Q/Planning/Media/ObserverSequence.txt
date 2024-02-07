@@ -1,0 +1,27 @@
+title Observers
+
+participant Listener
+participant Observer
+participant Referee
+participant Player
+
+Listener->Observer: AddListener
+Observer->*Referee: referee
+
+loop !GameOver
+box over Referee: Prompt turn
+
+Referee->Player: TakeTurn
+activate Player
+Referee->Observer: Update
+Observer->Listener: Update
+Player-->Referee: IAction
+deactivate Player
+activate Referee
+Referee->Player: newTiles
+deactivate Referee
+end
+box over Referee: Game End
+Referee->Player: Win
+Referee->Observer: GameEnd
+Observer->Listener: GameEnd

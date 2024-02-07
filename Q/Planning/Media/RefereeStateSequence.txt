@@ -1,0 +1,21 @@
+title Referee-State
+participant GameState
+participant Referee
+participant Player
+GameState<-Referee:GetCurrentPlayerTurnInfo()
+GameState-->Referee:PlayerTurnInfo
+Referee->Player:TakeTurn(PlayerTurnInfo)
+Player-->Referee:Action
+box over Referee:Determines if Action is valid\n(Is part of Action)
+note left of Referee:If Invalid
+Referee->GameState: KickPlayer(ID)
+Referee->Player:Notify Player Kicked\ \nTerminate connection
+note left of Referee:If Valid
+Referee->GameState:CommitAction(Action)
+Referee->GameState:IsGameOver()
+GameState-->Referee:bool
+note left of Referee:If Over
+Referee->GameState:GetPublicInfo
+GameState-->Referee:PublicGameInfo
+box over Referee:Compute Winner
+Referee->Player:Notify Players of results

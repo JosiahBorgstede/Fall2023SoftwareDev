@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>Render</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Silk.NET" Version="2.18.0" />
+    <PackageReference Include="Silk.NET.GLFW" Version="2.18.0" />
+    <PackageReference Include="Silk.NET.Input" Version="2.18.0" />
+    <PackageReference Include="Silk.NET.Maths" Version="2.18.0" />
+    <PackageReference Include="Silk.NET.Windowing" Version="2.18.0" />
+    <PackageReference Include="Silk.NET.Windowing.Desktop" Version="1.9.0" />
+    <PackageReference Include="Silk.NET.Windowing.Glfw" Version="2.18.0" />
+    <PackageReference Include="SkiaSharp" Version="2.88.6" />
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux" Version="2.88.6" />
+  </ItemGroup>
+ <ItemGroup>
+    <ProjectReference Include="..\..\Common\Common.csproj" />
+  </ItemGroup>
+</Project>

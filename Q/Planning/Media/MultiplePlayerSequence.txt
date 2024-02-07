@@ -1,0 +1,28 @@
+title Multiple Players
+ 
+participant Player1
+participant Player2
+
+participant Referee
+
+
+
+Player1->Referee: Register
+Player1<--Referee: Acknowledgement
+Player2->Referee: Register
+Player2<--Referee: Acknowledgement
+box over Referee: Game Start
+Player1<-Referee: Starting Tiles
+Player2<-Referee: Starting Tiles
+Player1<-Referee : Prompt for turn
+Player1 -->Referee : Action
+box over Referee : Update game state
+Player1<-Referee : Acknoledgement of legal turn, or kick from game
+Player2<-Referee : Prompt for turn
+Player2 -->Referee : Action
+box over Referee : Update game state
+Player2<-Referee : Acknoledgement of legal turn, or kick from game
+box over Referee: Gameplay continues
+box over Referee: Game End is reached
+Player1<-Referee: Game End Info
+Player2<-Referee: Game End Info
